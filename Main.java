@@ -23,7 +23,7 @@ public class Main {
         Patients adam = new Patients(name, id);
     // Informing the user on the new information of the patient.
         System.out.println(adam.getPatient());
-        // Automatically counting a new ID for each patient.
+    // Automatically counting a new ID for each patient.
         id ++;
 
     }
