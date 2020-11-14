@@ -1,6 +1,6 @@
 // Here is the main class. From here all the classes of our program will be called.
 // importing scanner to get input.
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 public class Main {
     public static void main(String[] args) {
     // Setting name to null basically and id = 0 for the first person.
@@ -8,9 +8,8 @@ public class Main {
     int id = 0;
     // I created a while loop, this loop always asks for a new input, a new patient. It stops only when you input 'quit'.
     while (!name.equals("quit")) {
-        System.out.println("Enter patients name. ");
-        Scanner sc = new Scanner(System.in);
-        name = sc.nextLine();
+        String patName = JOptionPane.showInputDialog("Enter patients name. ");
+    	name = patName;
     // if you input '/all' it shows you all the names that have already given it.
         if (name.equals("/all")) {
             Patients.allNames();
@@ -27,6 +26,6 @@ public class Main {
         id ++;
 
     }
-      
+     
     }
 }
