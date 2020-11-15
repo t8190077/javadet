@@ -31,5 +31,14 @@ public class Patients {
         for (int i = 0; i <= names.size() - 1; i++) {
             System.out.println("ID: " + i + " NAME: " + names.get(i));
         }
-    }
+    }   
+    // Function that returns a string array of all patient names in a nice format,used for GUI
+        public static String [] namesArr() {
+        	String arr [] = new String[names.size()];
+        	for (int i = 0; i <= names.size() - 1; i++) {
+                arr[i]=("ID: " + i + "        NAME: " + names.get(i));
+            }
+        	return arr;
+        }
+    
 } 
