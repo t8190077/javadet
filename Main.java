@@ -2,7 +2,13 @@
 // importing scanner to get input.
 import java.util.Scanner;
 public class Main {
-    public static void main(String[] args) {
+
+     
+
+    public static void main(String[] args) throws Exception{
+    //Create DB
+        MySQLAccess dao = new MySQLAccess();
+        dao.readDataBase();
     // Setting name to null basically and id = 0 for the first person.
     String name = "";
     int id = 0;
@@ -29,4 +35,5 @@ public class Main {
     }
       
     }
+    
 }
