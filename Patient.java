@@ -4,7 +4,7 @@ import java.io.FileNotFoundException;  // Import this class to handle errors
 import java.io.IOException;  // Import the IOException class to handle err
 import java.util.Scanner; // Import the Scanner class to read text files
 
-public class Patients {
+public class Patient {
     // Initialising name and id.
     String name;
     int id;
@@ -27,10 +27,10 @@ public class Patients {
     static ArrayList<Integer> ids = new ArrayList<>();
     static ArrayList<String> names = new ArrayList<>();
     // Patient object constructor.
-    public Patients(String name, int id) {
+    public Patient(String name, int id) {
         this.name = name;
         this.id = id;
-    // Adding patients attributes to lists.
+    // Adding patient attributes to lists.
         ids.add(id); 
         names.add(name);
     }
@@ -46,7 +46,7 @@ public class Patients {
     public String getPatient() {
         return "NAME: " + name + "\nID: " + id;
     }
-    // Function that returns all patients names in a nice format.
+    // Function that returns all patient names in a nice format.
     public static void allNames() {
         for (int i = 0; i <= names.size() - 1; i++) {
             System.out.println("ID: " + i + " NAME: " + names.get(i));

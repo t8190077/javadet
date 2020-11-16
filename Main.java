@@ -23,23 +23,23 @@ public class Main {
         System.out.println("An error occurred.");
         e.printStackTrace();
       }
-      Patients.readdata();
+      Patient.readdata();
     
     // I created a while loop, this loop always asks for a new input, a new patient. It stops only when you input 'quit'.
     while (!name.equals("quit")) {
-        System.out.println("Enter patients name. ");
+        System.out.println("Enter patient name. ");
         Scanner sc = new Scanner(System.in);
         name = sc.nextLine();
     // if you input '/all' it shows you all the names that have already given it.
         if (name.equals("/all")) {
-            Patients.allNames();
+            Patient.allNames();
             continue;
         }
         if (name.equals("quit")) {
             break;
         }
     // Creating new patient object..
-        Patients adam = new Patients(name, id);
+        Patient adam = new Patient(name, id);
     // Informing the user on the new information of the patient.
         System.out.println(adam.getPatient());
         // Automatically counting a new ID for each patient.
@@ -49,7 +49,7 @@ public class Main {
     try {
         FileWriter myWriter = new FileWriter("data.txt");
         ArrayList<String> data = new ArrayList<>();
-        data = Patients.returnNames();
+        data = Patient.returnNames();
         for(int i = 0; i <= data.size() - 1; i++) {
             myWriter.write(data.get(i) + "\n");
         }
