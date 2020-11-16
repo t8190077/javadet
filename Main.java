@@ -1,8 +1,34 @@
 // Here is the main class. From here all the classes of our program will be called.
 // importing scanner to get input.
 import java.util.Scanner;
+import java.io.File;  // Import the File class
+import java.io.IOException;  // Import the IOException class to handle err
+import java.io.FileWriter;   // Import the FileWriter class
+import java.util.ArrayList;
+
+
+
 public class Main {
     public static void main(String[] args) {
+    // Creating new txt file
+    try {
+        File myObj = new File("data.txt");
+        if (myObj.createNewFile()) {
+          System.out.println("File created: " + myObj.getName());
+        } else {
+          ;
+        }
+      } catch (IOException e) {
+        System.out.println("An error occurred.");
+        e.printStackTrace();
+      }
+      Patients.readdata();
+    
+       
+        
+
+    
+
     // Setting name to null basically and id = 0 for the first person.
     String name = "";
     int id = 0;
@@ -27,6 +53,20 @@ public class Main {
         id ++;
 
     }
+    try {
+        FileWriter myWriter = new FileWriter("data.txt");
+        ArrayList<String> data = new ArrayList<>();
+        data = Patients.returnNames();
+        for(int i = 0; i <= data.size() - 1; i++) {
+            myWriter.write(data.get(i) + "\n");
+        }
+        myWriter.close();
+        System.out.println("Successfully wrote to the file.");
+      } catch (IOException e) {
+        System.out.println("An error occurred.");
+        e.printStackTrace();
+      }
+
       
     }
 }
