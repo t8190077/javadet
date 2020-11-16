@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import java.util.ArrayList;
 import java.io.File;  // Import the File class
 import java.io.FileNotFoundException;  // Import this class to handle errors
@@ -69,4 +70,40 @@ public class Patients {
         }
 >>>>>>> 4126d518061c98941110e0c0661fe0625743765e
     
+=======
+import java.util.ArrayList;
+public class Patients {
+    // Initialising name and id.
+    String name;
+    int id;
+    // These are two arraylists, in which we are going to input our names and ids.
+    static ArrayList<Integer> ids = new ArrayList<>();
+    static ArrayList<String> names = new ArrayList<>();
+    // Patient object constructor.
+    public Patients(String name, int id) {
+        this.name = name;
+        this.id = id;
+    // Adding patients attributes to lists.
+        ids.add(id); 
+        names.add(name);
+    }
+    // Simple toString to return name.
+    public String toString() {
+        return name;
+    }
+    // Simple toString to return id.
+    public int getId() {
+        return id;
+    }
+    // Custom toString that return full id + name.
+    public String getPatient() {
+        return "NAME: " + name + "\nID: " + id;
+    }
+    // Function that returns all patients names in a nice format.
+    public static void allNames() {
+        for (int i = 0; i <= names.size() - 1; i++) {
+            System.out.println("ID: " + i + " NAME: " + names.get(i));
+        }
+    }
+>>>>>>> 60ae264ab2bb50213da72f57c6b22975d0930d07
 } 
