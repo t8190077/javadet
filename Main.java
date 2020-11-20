@@ -44,13 +44,6 @@ public class Main {
         email = sc.nextLine();
         System.out.println("Enter patients phone number: ");
         phonenumber = sc.nextLine();
-        // if you input /search (Enter) x with x a number of an index you can search the database.
-        if (name.equals("/search")) {
-          System.out.println("Please enter index to search with");
-          int ind = Integer.parseInt(sc.nextLine());
-          System.out.println(Patient.idSearch(ind));
-          continue;
-      }
     // Creating new patient object..
         Patient adam = new Patient(name, id, amka, dob, email, phonenumber);
         pats.add(adam);
@@ -59,9 +52,19 @@ public class Main {
         // Automatically counting a new ID for each patient.
         id ++;
         
-        System.out.println("Type: /quit if you want to exit.\n      /all if you want to see all patient's names so far.");
+        System.out.println("Type: /quit if you want to exit.\n      /all if you want to see all patient's names so far."
+        		+ "\n      /search to search the database.");
         input = sc.nextLine();
-     // if you input '/all' it shows you all the names that have already given it.
+     // if you input /search (Enter) x with x a number of an index you can search the database.
+        if (input.equals("/search")) {
+          System.out.println("Please enter index to search with");
+          int ind = Integer.parseInt(sc.nextLine());
+          System.out.println(Patient.idSearch(ind));
+          System.out.println("Type: /quit if you want to exit.");
+          input = sc.nextLine();
+          continue;
+      }
+        // if you input '/all' it shows you all the names that have already given it.
         if (input.equals("/all")) {
             Patient.allNames();
             System.out.println("Type: /quit if you want to exit.");
