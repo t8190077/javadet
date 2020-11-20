@@ -14,7 +14,6 @@ public class Main {
     public static void main(String[] args) {
     // Setting name and attributes to null basically and id = 0 for the first person.
     String phonenumber, amka, dob, email, name, input = "";
-    Date dobform = null;
     
     // Creating new file if it doesnt exist, reading data from existing file.
     try {
@@ -31,7 +30,7 @@ public class Main {
       // Reading data from file.
       Patient.readdata();
       int id = Patient.returnNames().size();
-    // I created a while loop, this loop always asks for a new input, a new patient. It stops only when you input 'quit'.
+    // I created a while loop, this loop always asks for a new input, a new patient. It stops only when you input '/quit'.
       do {
         System.out.println("Enter patients name. ");
         Scanner sc = new Scanner(System.in);
@@ -45,11 +44,6 @@ public class Main {
         email = sc.nextLine();
         System.out.println("Enter patients phone number: ");
         phonenumber = sc.nextLine();
-    // if you input '/all' it shows you all the names that have already given it.
-        if (name.equals("/all")) {
-            Patient.allNames();
-            continue;
-        }
         // if you input /search (Enter) x with x a number of an index you can search the database.
         if (name.equals("/search")) {
           System.out.println("Please enter index to search with");
@@ -57,21 +51,26 @@ public class Main {
           System.out.println(Patient.idSearch(ind));
           continue;
       }
-        if (name.equals("quit")) {
-            break;
-        }
     // Creating new patient object..
         Patient adam = new Patient(name, id, amka, dob, email, phonenumber);
         pats.add(adam);
-    // Informing the user on the new information of the patient.
+     // Informing the user on the new information of the patient.
         System.out.println(adam.getPatient());
         // Automatically counting a new ID for each patient.
         id ++;
- 
-        System.out.println("Press quit if you want to exit. ");
+        
+        System.out.println("Type: /quit if you want to exit.\n      /all if you want to see all patient's names so far.");
         input = sc.nextLine();
-    } while (!input.equals("quit")); 
-   // Writing results to .txt file.
+     // if you input '/all' it shows you all the names that have already given it.
+        if (input.equals("/all")) {
+            Patient.allNames();
+            System.out.println("Type: /quit if you want to exit.");
+            input = sc.nextLine();
+            continue;
+        }
+    } while (!input.equals("/quit")); 
+  
+    // Writing results to .txt file.
     try {
         FileWriter myWriter = new FileWriter("data.txt");
         ArrayList<String> data = new ArrayList<>();

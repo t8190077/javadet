@@ -5,9 +5,9 @@ import java.io.IOException;  // Importing the IOException class to handle err
 import java.util.Scanner; // Importing the Scanner class to read text files
 import java.util.Date;
 public class Patient {
-    // Initialising name and id.
+    // Initialising name and id and other attributes.
     String name, amka, email, phonenumber;
-	String dob;
+	String dob; // dob = date of birth.
     static int id;
     // Creating method that reads data from file.
     public static void readdata() {
@@ -17,7 +17,7 @@ public class Patient {
             while (myReader.hasNextLine()) {
               String data = myReader.nextLine();
               String[] myArray = data.split(",");
-              Patient adam = new Patient(myArray[0],Integer.parseInt(myArray[1]), myArray[2], myArray[3], myArray[4], myArray[5]);  //TODO
+              Patient adam = new Patient(myArray[0], Integer.parseInt(myArray[1]), myArray[2], myArray[3], myArray[4], myArray[5]);
               id = ids.size();
               Main.pats.add(adam);             
             }
@@ -27,7 +27,7 @@ public class Patient {
             e.printStackTrace();
           }
         }
-    // These are two arraylists, in which we are going to input our names and ids.
+    // These are arraylists, in which we are going to input our names,ids and other info.
     static ArrayList<Integer> ids = new ArrayList<>();
     static ArrayList<String> names = new ArrayList<>();
     static ArrayList<String> datab = new ArrayList<>();
