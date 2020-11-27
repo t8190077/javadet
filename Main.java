@@ -1,3 +1,4 @@
+//FIRST COMPILE MyFrame THEN Patient AND THEN Main
 import java.util.Scanner; // Importing Scanner class
 import java.io.File;  // Importing the File class
 import java.io.IOException;  // Importing the IOException class to handle err

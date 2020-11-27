@@ -55,9 +55,8 @@ public class MyFrame extends JFrame implements ActionListener {
     //Create textfield1
     createFile();
 	textField1 = new JTextField(25);	      
-	textField1.setBounds(210,305,485,40);                                       //Set place and size of panel2 in frame
+	textField1.setBounds(210,225,545,30);                                       //Set place and size of panel2 in frame
 	textField1.setFont(new Font("Arial", Font.PLAIN,20));                       ////Set textField1's text characteristics
-		
 	//Create label2
 	label2=new JLabel();
 	label2.setText("Enter command here:");                                      //Add text to label2
@@ -65,72 +64,60 @@ public class MyFrame extends JFrame implements ActionListener {
 	
 	//Create panel2
 	panel2=new JPanel();                       
-	panel2.setBounds(20, 307, 200, 50);                                         //Set place and size of panel2 in frame
+	panel2.setBounds(20, 227, 200, 30);                                         //Set place and size of panel2 in frame
 	panel2.add(label2);                                                         //Add label2 to panel2
-		
 	//Create add button
 	button = new JButton();
-	button.setBounds(755,300,100,50);                                           //Set place and size of button in frame
+	button.setBounds(655,295,100,40);                                           //Set place and size of button in frame
 	button.addActionListener(this);                                             //Add action listener for button
 	button.setText("Add");                                                    //Add button text
 	button.setFocusable(false);
 	button.setFont(new Font("Arial", Font.PLAIN,20));                           //Set button's text characteristics
-	Border b = BorderFactory.createLineBorder(Color.red,3);
-	button.setBorder(b);
-		
-    // Create search button
+        // Create search button
 	button2 = new JButton();
-	button2.setBounds(605,365,100,30);                                           //Set place and size of button in frame
+	button2.setBounds(455,295,200,40);                                           //Set place and size of button in frame
 	button2.addActionListener(this);                                             //Add action listener for button
 	button2.setText("Search by Name");                                                    //Add button text
 	button2.setFocusable(false);
 	button2.setFont(new Font("Arial", Font.PLAIN,20));                           //Set button's text characteristics
-	Border c = BorderFactory.createLineBorder(Color.red,3);
-	button2.setBorder(c);
-    // Create save button
+	
+        // Create save button
 	button3 = new JButton();
-	button3.setBounds(405,365,100,30);                                           //Set place and size of button in frame
+	button3.setBounds(355,295,100,40);                                           //Set place and size of button in frame
 	button3.addActionListener(this);                                             //Add action listener for button
-	button3.setText("save");                                                    //Add button text
+	button3.setText("Save");                                                    //Add button text
 	button3.setFocusable(false);
 	button3.setFont(new Font("Arial", Font.PLAIN,20));                           //Set button's text characteristics
-	Border d = BorderFactory.createLineBorder(Color.red,3);
-	button3.setBorder(d);
-
+	
+	
 	//Create all button
 	button4 = new JButton();
-	button4.setBounds(205,365,100,30);                                           //Set place and size of button in frame
+	button4.setBounds(255,295,100,40);                                           //Set place and size of button in frame
 	button4.addActionListener(this);                                             //Add action listener for button
-	button4.setText("see all");                                                    //Add button text
+	button4.setText("See All");                                                    //Add button text
 	button4.setFocusable(false);
 	button4.setFont(new Font("Arial", Font.PLAIN,20));                           //Set button's text characteristics
-	Border e = BorderFactory.createLineBorder(Color.red,3);
-	button4.setBorder(e);
-
+		
 	//Create delete button 
 
 	button5 = new JButton();
-	button5.setBounds(105,365,100,30);                                           //Set place and size of button in frame
+	button5.setBounds(155,295,100,40);                                           //Set place and size of button in frame
 	button5.addActionListener(this);                                             //Add action listener for button
-	button5.setText("delete");                                                    //Add button text
+	button5.setText("Delete");                                                    //Add button text
 	button5.setFocusable(false);
 	button5.setFont(new Font("Arial", Font.PLAIN,20));                           //Set button's text characteristics
-	Border f = BorderFactory.createLineBorder(Color.red,3);
-	button5.setBorder(f);
-		
+	
 	//Create image to use in label
-	image = new ImageIcon("image.png");                                        //Path to image
-	border = BorderFactory.createLineBorder(Color.red,3);                      //Create border
+	image = new ImageIcon("covidtracelogo.png");                                        //Path to image
 	//Create label with text and icon	
 	label = new JLabel ();
 	label.setText("Welcome to Covidtrace");                                     //Set label text
 	label.setIcon(image);                                                       //Set label icon 
 	label.setFont(new Font("Arial",Font.PLAIN,20));                             //Set label's text characteristics
-	label.setBorder(border);                                                    //Set label border
-	label.setBounds(0 , 0 , 600, 600);                                          //Set label place in frame
+	label.setBounds(0 , 0 , 600, 250);                                          //Set label place in frame
 	//Create panel1 to add label 		
 	JPanel panel1=new JPanel();
-	panel1.setBounds(15, 0, 865, 370);                                          //Set place and size of panel1 in frame
+	panel1.setBounds(15, 0, 865, 250);                                          //Set place and size of panel1 in frame
 	//panel1.setBorder(border);                                                 //Set panel1 borders
 	panel1.add(label);                                                          //Add label to panel1 
     
@@ -139,9 +126,9 @@ public class MyFrame extends JFrame implements ActionListener {
 	//Create scrollpane
 	lowerPanel = new JPanel ();
     lowerPanel.setBorder (new TitledBorder(new EtchedBorder(), "Display Area" ));
-    lowerPanel.setBounds(45, 400, 800, 300);
+    lowerPanel.setBounds(45, 340, 800, 360);
     //Create the lower panel components
-    display = new JTextArea (16, 58);
+    display = new JTextArea (20,68);
     display.setEditable (false);                                                //Set textArea non-editable
     scroll = new JScrollPane (display);
     scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
@@ -150,7 +137,7 @@ public class MyFrame extends JFrame implements ActionListener {
 	display.append("Type: /quit if you want to exit.\n      /all if you want to see all patient's names so far."
 			   + "\n      /search to search the database." + "\n      /add to add patient. \n  /del to delete patient + \n");
 	//Add components to this frame
-	ImageIcon logo = new ImageIcon("logo.png");
+	ImageIcon logo = new ImageIcon("covidtracelogo.png");
 	this.setResizable(false);                                                   //Set frame non-resizable
 	this.setIconImage(logo.getImage());                                         //Use frame logo
     this.setTitle("Covidtrace");                                                //Set frame title;
