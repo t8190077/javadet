@@ -73,7 +73,7 @@ public class MyFrame extends JFrame implements ActionListener {
 	button.setText("Add");                                                    //Add button text
 	button.setFocusable(false);
 	button.setFont(new Font("Arial", Font.PLAIN,20));                           //Set button's text characteristics
-        // Create search button
+    // Create search button
 	button2 = new JButton();
 	button2.setBounds(455,295,200,40);                                           //Set place and size of button in frame
 	button2.addActionListener(this);                                             //Add action listener for button
@@ -81,7 +81,7 @@ public class MyFrame extends JFrame implements ActionListener {
 	button2.setFocusable(false);
 	button2.setFont(new Font("Arial", Font.PLAIN,20));                           //Set button's text characteristics
 	
-        // Create save button
+    // Create save button
 	button3 = new JButton();
 	button3.setBounds(355,295,100,40);                                           //Set place and size of button in frame
 	button3.addActionListener(this);                                             //Add action listener for button
@@ -128,7 +128,7 @@ public class MyFrame extends JFrame implements ActionListener {
     lowerPanel.setBorder (new TitledBorder(new EtchedBorder(), "Display Area" ));
     lowerPanel.setBounds(45, 340, 800, 360);
     //Create the lower panel components
-    display = new JTextArea (20,68);
+    display = new JTextArea (20,60);
     display.setEditable (false);                                                //Set textArea non-editable
     scroll = new JScrollPane (display);
     scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
