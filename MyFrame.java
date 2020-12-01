@@ -108,13 +108,12 @@ public class MyFrame extends JFrame implements ActionListener {
 	button5.setFont(new Font("Arial", Font.PLAIN,20));                           //Set button's text characteristics
 	
 	//Create image to use in label
-	image = new ImageIcon("covidtracelogo.png");                                        //Path to image
-	//Create label with text and icon	
+	ImageIcon image = new ImageIcon(new ImageIcon("covidtracelogo.png").getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT));
+	//Create label with icon	
 	label = new JLabel ();
-	label.setText("Welcome to Covidtrace");                                     //Set label text
-	label.setIcon(image);                                                       //Set label icon 
-	label.setFont(new Font("Arial",Font.PLAIN,20));                             //Set label's text characteristics
-	label.setBounds(0 , 0 , 600, 250);                                          //Set label place in frame
+	label.setIcon(image);
+	//Set label icon 
+	label.setBounds(0 , 0 , 800, 250);                                          //Set label place in frame
 	//Create panel1 to add label 		
 	JPanel panel1=new JPanel();
 	panel1.setBounds(15, 0, 865, 250);                                          //Set place and size of panel1 in frame
