@@ -32,7 +32,7 @@ import java.util.Date;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-
+//test
 public class MyFrame extends JFrame implements ActionListener {
 	
 	JButton	button;
