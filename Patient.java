@@ -125,7 +125,7 @@ public class Patient {
      }
      public static ArrayList<String> returnAmkachain() {
         return amkachains;
-   }
+     }
      // Static method that returns arraylist of emails.
      public static ArrayList<String> returnEmails() {
       	return emails;
@@ -156,7 +156,7 @@ public class Patient {
       public static String idSearch(int id) {
           String found = "";
           for (int i = 0; i <= MyFrame.pats.size() - 1; i++) {
-              if(MyFrame.pats.get(i).getId().equals(id)) {
+              if(MyFrame.pats.get(i).getId() == id) {
                   found = MyFrame.pats.get(i).getPatientData();
               }
           }
@@ -230,7 +230,7 @@ public class Patient {
        // Function that deletes patient by id
       public static void idDelete(int id) {
         for (int i = 0; i <= MyFrame.pats.size() - 1; i++) {
-            if(MyFrame.pats.get(i).getId().equals(id)) {
+            if(MyFrame.pats.get(i).getId() == id) {
                 MyFrame.pats.remove(i);
                 ids.remove(i);
                 names.remove(i);

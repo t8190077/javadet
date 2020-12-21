@@ -246,42 +246,52 @@ public class MyFrame extends JFrame implements ActionListener {
 		// if search button is pressed.  
 		} else if (e.getSource() == button2) {
 		  Scanner sc = new Scanner(System.in);
-			display.append("Enter "name" to search by name");
-			display.append("Enter "id" to search by id");
-			display.append("Enter "amka" to search by amka");
-			display.append("Enter "dob" to search by date of birth");
-			display.append("Enter "email" to search by email");
-			display.append("Enter "phonenumber" to search by phone number");
-			display.append("Enter "amkachain" to search by amka chain");
+			display.append("Enter <<name>> to search by name");
+			display.append("Enter <<id>> to search by id");
+			display.append("Enter <<amka>> to search by amka");
+			display.append("Enter <<dob>> to search by date of birth");
+			display.append("Enter <<email>> to search by email");
+			display.append("Enter <<phonenumber>> to search by phone number");
+			display.append("Enter <<amkachain>> to search by amka chain");
 			String ob = sc.nextLine();
-			if (ob == "name") {
-				display.append("Please enter name to search with.\n");
-		        String nme = textField1.getText();
-		        display.append(Patient.nameSearch(nme));
-			} else if (ob == "id") {
-				display.append("Please enter id to search with.\n");
-				int id1 = textField1.getText();
-				display.append(Patient.idSearch(id1));
-			} else if (ob == "amka") {
-				display.append("Please enter amka to search with.\n");
-				String amka1 = textField1.getText();
-				display.append(Patient.amkaSearch(amka1));
-			} else if (ob == "dob") {
-				display.append("Please enter date of birth to search with.\n");
-				String dob1 = textField1.getText();
-				display.append(Patient.dobSearch(dob1));
-			} else if (ob == "email") {
-				display.append("Please enter email to search with.\n");
-				String email1 = textField1.getText();
-				display.append(Patient.emailSearch(email1));
-			} else if (ob == "phonenumber") {
-				display.append("Please enter phone number to search with.\n");
-				String ph1 = textField1.getText();
-				display.append(Patient.phoneSearch(ph1));
-			} else if (ob == "amkachain") {
-				display.append("Please enter amka chain to search with.\n");
-				String amkachain1 = textField1.getText();
-				display.append(Patient.amkachainSearch(amkachain1));
+			switch (ob) 
+			{
+				case "name":
+					display.append("Please enter name to search with.\n");
+		        		String nme = textField1.getText();
+		        		display.append(Patient.nameSearch(nme));
+					break;
+				case "id":
+					display.append("Please enter id to search with.\n");
+					String idtext = textField1.getText();
+					int id1 = Integer.parseInt(idtext);
+					display.append(Patient.idSearch(id1));
+ 					break;				
+				case "amka":
+					display.append("Please enter amka to search with.\n");
+					String amka1 = textField1.getText();
+					display.append(Patient.amkaSearch(amka1));
+					break;
+				case "dob":
+					display.append("Please enter date of birth to search with.\n");
+					String dob1 = textField1.getText();
+					display.append(Patient.dobSearch(dob1));
+					break;
+				case "email":
+					display.append("Please enter email to search with.\n");
+					String email1 = textField1.getText();
+					display.append(Patient.emailSearch(email1));
+					break;
+				case "phonenumber":
+					display.append("Please enter phone number to search with.\n");
+					String ph1 = textField1.getText();
+					display.append(Patient.phoneSearch(ph1));
+					break;
+				case "amkachain":
+					display.append("Please enter amka chain to search with.\n");
+					String amkachain1 = textField1.getText();
+					display.append(Patient.amkachainSearch(amkachain1));
+					break;
 			}
         // if save button is pressed.
 		} else if (e.getSource() == button3) {
@@ -292,49 +302,59 @@ public class MyFrame extends JFrame implements ActionListener {
         // if delete button is pressed.
 		} else if (e.getSource() == button5) {
 			Scanner sc1 = new Scanner(System.in);
-			display.append("Enter "name" to delete by name");
-			display.append("Enter "id" to delete by id");
-			display.append("Enter "amka" to delete by amka");
-			display.append("Enter "dob" to delete by date of birth");
-			display.append("Enter "email" to delete by email");
-			display.append("Enter "phonenumber" to delete by phone number");
-			display.append("Enter "amkachain" to delete by amka chain");
+			display.append("Enter <<name>> to delete by name");
+			display.append("Enter <<id>> to delete by id");
+			display.append("Enter <<amka>> to delete by amka");
+			display.append("Enter <<dob>> to delete by date of birth");
+			display.append("Enter <<email>> to delete by email");
+			display.append("Enter <<phonenumber>> to delete by phone number");
+			display.append("Enter <<amkachain>> to delete by amka chain");
 			String obj = sc1.nextLine();
-			if (obj == "name") {
-				display.append("Please enter name to delete with.\n");
-				String nem = textField1.getText();
-				Patient.nameDelete(nem);
-				display.append("Patient with name " + nem + " Deleted.\n");
-			} else if (obj == "id") {
-				display.append("Please enter id to delete with.\n");
-				int id2 = textField1.getText();
-				Patient.idDelete(id2);
-				display.append("Patient with id " + id2 + " Deleted.\n");
-			} else if (obj == "amka") {
-				display.append("Please enter amka to delete with.\n");
-				String amka2 = textField1.getText();
-				Patient.amkaDelete(amka2);
-				display.append("Patient with amka " + amka2 + " Deleted.\n");
-			} else if (obj == "dob") {
-				display.append("Please enter date of birth to delete with.\n");
-				String dob2 = textField1.getText();
-				Patient.dobDelete(dob2);
-				display.append("Patient with date of birth " + dob2 + " Deleted.\n");
-			} else if (obj == "email") {
-				display.append("Please enter email to delete with.\n");
-				String email2 = textField1.getText();
-				Patient.emailDelete(email2);
-				display.append("Patient with email " + email2 + " Deleted.\n");
-			} else if (obj == "phonenumber") {
-				display.append("Please enter phone number to delete with.\n");
-				String ph2 = textField1.getText();
-				Patient.phoneDelete(ph2);
-				display.append("Patient with phone number " + ph2 + " Deleted.\n");
-			} else if (obj == "amkachain") {
-				display.append("Please enter amka chain to delete with.\n");
-				String amkachain2 = textField1.getText();
-				Patient.amkachainDelete(amkachain2);
-				display.append("Patient with amka chain " + amkachain2 + " Deleted.\n");
+			switch (obj)
+                        {
+                                case "name":
+					display.append("Please enter name to delete with.\n");
+					String nem = textField1.getText();
+					Patient.nameDelete(nem);
+					display.append("Patient with name " + nem + " Deleted.\n");
+			 		break;
+                                case "id":
+					display.append("Please enter id to delete with.\n");
+					String idtext = textField1.getText();
+					int id2 = Integer.parseInt(idtext);
+					Patient.idDelete(id2);
+					display.append("Patient with id " + id2 + " Deleted.\n");
+					break;
+				case "amka":
+					display.append("Please enter amka to delete with.\n");
+					String amka2 = textField1.getText();
+					Patient.amkaDelete(amka2);
+					display.append("Patient with amka " + amka2 + " Deleted.\n");
+					break;
+				case "dob":
+					display.append("Please enter date of birth to delete with.\n");
+					String dob2 = textField1.getText();
+					Patient.dobDelete(dob2);
+					display.append("Patient with date of birth " + dob2 + " Deleted.\n");
+					break;
+				case "email":
+					display.append("Please enter email to delete with.\n");
+					String email2 = textField1.getText();
+					Patient.emailDelete(email2);
+					display.append("Patient with email " + email2 + " Deleted.\n");
+					break;
+				case "phonenumber":
+					display.append("Please enter phone number to delete with.\n");
+					String ph2 = textField1.getText();
+					Patient.phoneDelete(ph2);
+					display.append("Patient with phone number " + ph2 + " Deleted.\n");
+					break;
+				case "amkachain":
+					display.append("Please enter amka chain to delete with.\n");
+					String amkachain2 = textField1.getText();
+					Patient.amkachainDelete(amkachain2);
+					display.append("Patient with amka chain " + amkachain2 + " Deleted.\n");
+					break;
 			}
 		}
 	}
