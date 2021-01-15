@@ -40,9 +40,9 @@ public class MyFrame extends JFrame implements ActionListener {
 	JButton button3;
 	JButton button4;
 	JButton button5;
-	JTextField textField1;
-	JLabel label2;
-	JPanel panel2;
+	JTextField textField1, textField2, textField3, textField4, textField5, textField6, textField7;
+	JLabel label2, label3, label4, label5, label6, label7, label8;
+	JPanel panel2, panel3, panel4, panel5, panel6, panel7, panel8;
 	ImageIcon image;
 	Border border;
 	JLabel label;
@@ -55,35 +55,119 @@ public class MyFrame extends JFrame implements ActionListener {
     //Create textfield1
     createFile();
 	textField1 = new JTextField(25);	      
-	textField1.setBounds(210,225,545,30);                                       //Set place and size of panel2 in frame
+	textField1.setBounds(210,525,545,30);                                       //Set place and size of panel2 in frame
 	textField1.setFont(new Font("Arial", Font.PLAIN,20));                       ////Set textField1's text characteristics
 	//Create label2
 	label2=new JLabel();
 	label2.setText("Enter command here:");                                      //Add text to label2
 	label2.setFont(new Font("Arial", Font.PLAIN,17));                           //Set label2 text characteristics
-	
 	//Create panel2
 	panel2=new JPanel();                       
-	panel2.setBounds(20, 227, 200, 30);                                         //Set place and size of panel2 in frame
+	panel2.setBounds(20, 527, 200, 30);                                         //Set place and size of panel2 in frame
 	panel2.add(label2);                                                         //Add label2 to panel2
+	
+	//Create textfield2
+    createFile();
+	textField2 = new JTextField(25);	      
+	textField2.setBounds(210,265,545,30);                                       //Set place and size of panel2 in frame
+	textField2.setFont(new Font("Arial", Font.PLAIN,20));                       ////Set textField1's text characteristics
+	//Create label3
+	label3=new JLabel();
+	label3.setText("Name:");                                                    //Add text to label2
+	label3.setFont(new Font("Arial", Font.PLAIN,17));                           //Set label2 text characteristics
+	//Create panel3
+	panel3=new JPanel();                       
+	panel3.setBounds(20, 267, 200, 30);                                         //Set place and size of panel3 in frame
+	panel3.add(label3);                                                         //Add label3 to panel3
+	
+	//Create textfield3
+    createFile();
+	textField3= new JTextField(25);	      
+	textField3.setBounds(210,305,545,30);                                       //Set place and size of panel2 in frame
+	textField3.setFont(new Font("Arial", Font.PLAIN,20));                       ////Set textField1's text characteristics
+	//Create label5
+	label4=new JLabel();
+	label4.setText("AMKA:");                                                    //Add text to label2
+	label4.setFont(new Font("Arial", Font.PLAIN,17));                           //Set label2 text characteristics
+	//Create panel4
+	panel4=new JPanel();                       
+	panel4.setBounds(20, 307, 200, 30);                                         //Set place and size of panel3 in frame
+	panel4.add(label4);                                                         //Add label3 to panel3
+	
+	//Create textfield4
+    createFile();
+	textField4= new JTextField(25);	      
+	textField4.setBounds(210,345,545,30);                                       //Set place and size of panel2 in frame
+	textField4.setFont(new Font("Arial", Font.PLAIN,20));                       ////Set textField1's text characteristics
+	//Create label5
+	label5=new JLabel();
+	label5.setText("Date of Birth:");                                            //Add text to label2
+	label5.setFont(new Font("Arial", Font.PLAIN,17));                           //Set label2 text characteristics
+	//Create panel4
+	panel5=new JPanel();                       
+	panel5.setBounds(20, 347, 200, 30);                                         //Set place and size of panel3 in frame
+	panel5.add(label5);                                                         //Add label3 to panel3
+	
+	//Create textfield5
+    createFile();
+	textField5= new JTextField(25);	      
+	textField5.setBounds(210,385,545,30);                                       //Set place and size of panel2 in frame
+	textField5.setFont(new Font("Arial", Font.PLAIN,20));                       //Set textField5's text characteristics
+	//Create label6
+	label6=new JLabel();
+	label6.setText("Email:");                                                    //Add text to label6
+	label6.setFont(new Font("Arial", Font.PLAIN,17));                           //Set label6 text characteristics
+	//Create panel6
+	panel6=new JPanel();                       
+	panel6.setBounds(20, 387, 200, 30);                                         //Set place and size of panel6 in frame
+	panel6.add(label6);                                                         //Add label6 to panel6
+	
+	//Create textfield6
+    createFile();
+	textField6= new JTextField(25);	      
+	textField6.setBounds(210,425,545,30);                                       //Set place and size of panel7 in frame
+	textField6.setFont(new Font("Arial", Font.PLAIN,20));                       //Set textField6's text characteristics
+	//Create label7
+	label7=new JLabel();
+	label7.setText("Phone Number:");                                            //Add text to label7
+	label7.setFont(new Font("Arial", Font.PLAIN,17));                           //Set label7 text characteristics
+	//Create panel7
+	panel7=new JPanel();                       
+	panel7.setBounds(20, 427, 200, 30);                                         //Set place and size of panel7 in frame
+	panel7.add(label7);                                                         //Add label7 to panel7
+	
+	//Create textfield7
+    createFile();
+	textField7= new JTextField(25);	      
+	textField7.setBounds(210,465,545,30);                                       //Set place and size of panel8 in frame
+	textField7.setFont(new Font("Arial", Font.PLAIN,20));                       //Set textField7's text characteristics
+	//Create label8
+	label8=new JLabel();
+	label8.setText("AMKA Chain:");                                              //Add text to label8
+	label8.setFont(new Font("Arial", Font.PLAIN,17));                           //Set label8 text characteristics
+	//Create panel7
+	panel8=new JPanel();                       
+	panel8.setBounds(20, 467, 200, 30);                                         //Set place and size of panel8 in frame
+	panel8.add(label8);                                                         //Add label8 to panel8
+		
 	//Create add button
 	button = new JButton();
-	button.setBounds(655,295,100,40);                                           //Set place and size of button in frame
+	button.setBounds(655,580,100,40);                                           //Set place and size of button in frame
 	button.addActionListener(this);                                             //Add action listener for button
-	button.setText("Add");                                                    //Add button text
+	button.setText("Add");                                                       //Add button text
 	button.setFocusable(false);
 	button.setFont(new Font("Arial", Font.PLAIN,20));                           //Set button's text characteristics
     // Create search button
 	button2 = new JButton();
-	button2.setBounds(455,295,200,40);                                           //Set place and size of button in frame
+	button2.setBounds(455,580,200,40);                                           //Set place and size of button in frame
 	button2.addActionListener(this);                                             //Add action listener for button
-	button2.setText("Search by Name");                                                    //Add button text
+	button2.setText("Search by Name");                                           //Add button text
 	button2.setFocusable(false);
 	button2.setFont(new Font("Arial", Font.PLAIN,20));                           //Set button's text characteristics
 	
     // Create save button
 	button3 = new JButton();
-	button3.setBounds(355,295,100,40);                                           //Set place and size of button in frame
+	button3.setBounds(355,580,100,40);                                           //Set place and size of button in frame
 	button3.addActionListener(this);                                             //Add action listener for button
 	button3.setText("Save");                                                    //Add button text
 	button3.setFocusable(false);
@@ -92,7 +176,7 @@ public class MyFrame extends JFrame implements ActionListener {
 	
 	//Create all button
 	button4 = new JButton();
-	button4.setBounds(255,295,100,40);                                           //Set place and size of button in frame
+	button4.setBounds(255,580,100,40);                                           //Set place and size of button in frame
 	button4.addActionListener(this);                                             //Add action listener for button
 	button4.setText("See All");                                                    //Add button text
 	button4.setFocusable(false);
@@ -101,7 +185,7 @@ public class MyFrame extends JFrame implements ActionListener {
 	//Create delete button 
 
 	button5 = new JButton();
-	button5.setBounds(155,295,100,40);                                           //Set place and size of button in frame
+	button5.setBounds(155,580,100,40);                                           //Set place and size of button in frame
 	button5.addActionListener(this);                                             //Add action listener for button
 	button5.setText("Delete");                                                    //Add button text
 	button5.setFocusable(false);
@@ -125,7 +209,7 @@ public class MyFrame extends JFrame implements ActionListener {
 	//Create scrollpane
 	lowerPanel = new JPanel ();
     lowerPanel.setBorder (new TitledBorder(new EtchedBorder(), "Display Area" ));
-    lowerPanel.setBounds(45, 340, 800, 360);
+    lowerPanel.setBounds(45, 620, 800, 360);
     //Create the lower panel components
     display = new JTextArea (20,60);
     display.setEditable (false);                                                //Set textArea non-editable
@@ -141,7 +225,7 @@ public class MyFrame extends JFrame implements ActionListener {
 	this.setIconImage(logo.getImage());                                         //Use frame logo
     this.setTitle("Covidtrace");                                                //Set frame title;
 	this.setVisible(true);                                                      //Set frame vidible
-	this.setSize(900,750);                                                      //Set dimentions of this frame
+	this.setSize(900,1020);                                                      //Set dimentions of this frame
 	this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);                        //Exit app when 'X' clicked 
 	this.add(button);                                                           //Add button to frame
 	this.add(textField1);                                                       //Add textField1 to frame
@@ -153,6 +237,18 @@ public class MyFrame extends JFrame implements ActionListener {
 	this.add(button3);
 	this.add(button4);
 	this.add(button5);
+	this.add(textField2);
+	this.add(panel3);
+	this.add(textField3);
+	this.add(panel4);
+	this.add(textField4);
+	this.add(panel5);
+	this.add(textField5);
+	this.add(panel6);
+	this.add(textField6);
+	this.add(panel7);
+	this.add(textField7);
+	this.add(panel8);
 	}
     public  String returnInp() {
         return input;
