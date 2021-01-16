@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;  // Importing this class to handle errors
 import java.io.IOException;  // Importing the IOException class to handle err
 import java.util.Scanner; // Importing the Scanner class to read text files
 import java.util.Date; // Importing java date for some reason? i dont know who pushed this
+import java.lang.Math;
 public class Patient {
     // Initialising name and id and other attributes.
     String name, amka, email, phonenumber, amkachain, dob;
@@ -22,7 +23,7 @@ public class Patient {
             }
             myReader.close();
           } catch (FileNotFoundException e) {
-            System.out.println("An error occurred.");
+            System.out.println("An error occurred. \n");
             e.printStackTrace();
           }
         }
@@ -62,26 +63,6 @@ public class Patient {
     public String getName() {
         return name;
     }
-    // Returning amka
-    public String getAmka() {
-    	return amka;
-    }
-    // Returning date of birth
-    public String getDob() {
-    	return dob;
-    }
-    // Returning email 
-    public String getEmail() {
-    	return email;
-    }
-    // Returning phone number
-    public String getPhone() {
-    	return phonenumber;
-    }
-    // Returning amka chain
-    public String getAmkachain() {
-    	return amkachain;
-    }
     // Custom toString that return full id + name.
     public String getPatient() {
         return "NAME: " + name + "\nID: " + id;
@@ -96,7 +77,7 @@ public class Patient {
     public static String allNames() {
         String c = "";
         for (int i = 0; i <= names.size() - 1; i++) {
-            c += "ID: " + i + " NAME: " + names.get(i) + "\n";
+            c += "ID: " + i + " NAME: " + names.get(i) + "\n \n";
         }
         return c;
     }
@@ -144,76 +125,18 @@ public class Patient {
       }
       // Function that searches by name
       public static String nameSearch(String name) {
-          String found = "";
+          String found = "Patient " + name + " not found. \n \n";
           for (int i = 0; i <= MyFrame.pats.size() - 1; i++) {
               if(MyFrame.pats.get(i).getName().equals(name)) {
                   found = MyFrame.pats.get(i).getPatientData();
-              }
+                  
           }
-          return found;
-      }
-      // Function that searches by id
-      public static String idSearch(int id) {
-          String found = "";
-          for (int i = 0; i <= MyFrame.pats.size() - 1; i++) {
-              if(MyFrame.pats.get(i).getId().equals(id)) {
-                  found = MyFrame.pats.get(i).getPatientData();
-              }
-          }
-          return found;
-      }
-      // Function that searches by amka
-      public static String amkaSearch(String amka) {
-          String found = "";
-          for (int i = 0; i <= MyFrame.pats.size() - 1; i++) {
-              if(MyFrame.pats.get(i).getAmka().equals(amka)) {
-                  found = MyFrame.pats.get(i).getPatientData();
-              }
-          }
-          return found;
-      }
-      // Function that searches by date of birth
-      public static String dobSearch(String dob) {
-          String found = "";
-          for (int i = 0; i <= MyFrame.pats.size() - 1; i++) {
-              if(MyFrame.pats.get(i).getDob().equals(dob)) {
-                  found = MyFrame.pats.get(i).getPatientData();
-              }
-          }
-          return found;
-      }
-      // Function that searches by email
-      public static String emailSearch(String email) {
-          String found = "";
-          for (int i = 0; i <= MyFrame.pats.size() - 1; i++) {
-              if(MyFrame.pats.get(i).getEmail().equals(email)) {
-                  found = MyFrame.pats.get(i).getPatientData();
-              }
-          }
-          return found;
-      }
-      // Function that searches by phone number
-      public static String phoneSearch(String phonenumber) {
-          String found = "";
-          for (int i = 0; i <= MyFrame.pats.size() - 1; i++) {
-              if(MyFrame.pats.get(i).getPhone().equals(phonenumber)) {
-                  found = MyFrame.pats.get(i).getPatientData();
-              }
-          }
-          return found;
-      }
-      // Function that searches by amka chain
-      public static String amkachainSearch(String amkachain) {
-          String found = "";
-          for (int i = 0; i <= MyFrame.pats.size() - 1; i++) {
-              if(MyFrame.pats.get(i).getAmkachain().equals(amkachain)) {
-                  found = MyFrame.pats.get(i).getPatientData();
-              }
-          }
+        }
           return found;
       }
       // Function that deletes patient by name:
-      public static void nameDelete(String name) {
+      public static boolean nameDelete(String name) {
+        boolean trigg = true;
         for (int i = 0; i <= MyFrame.pats.size() - 1; i++) {
             if(MyFrame.pats.get(i).getName().equals(name)) {
                 MyFrame.pats.remove(i);
@@ -224,97 +147,30 @@ public class Patient {
                 emails.remove(i);
                 phonenumbers.remove(i);
                 amkachains.remove(i);
-            }
+                trigg = false;
+            }     
         }
+        return trigg;
       }
-       // Function that deletes patient by id
-      public static void idDelete(int id) {
-        for (int i = 0; i <= MyFrame.pats.size() - 1; i++) {
-            if(MyFrame.pats.get(i).getId().equals(id)) {
-                MyFrame.pats.remove(i);
-                ids.remove(i);
-                names.remove(i);
-                amkas.remove(i);
-                dobs.remove(i);
-                emails.remove(i);
-                phonenumbers.remove(i);
-                amkachains.remove(i);
-            }
-        }
+      public static float ContactMean() {
+         int s = 0;
+
+          for(int i = 0; i<= MyFrame.pats.size() - 1; i++) {
+              s += amkachains.get(i).split(" ").length;     
+          }
+          float result = (float)s/(float)amkachains.size();
+         return result;
       }
-   // Function that deletes patient by amka
-      public static void amkaDelete(String amka) {
-        for (int i = 0; i <= MyFrame.pats.size() - 1; i++) {
-            if(MyFrame.pats.get(i).getAmka().equals(amka)) {
-                MyFrame.pats.remove(i);
-                ids.remove(i);
-                names.remove(i);
-                amkas.remove(i);
-                dobs.remove(i);
-                emails.remove(i);
-                phonenumbers.remove(i);
-                amkachains.remove(i);
-            }
+      public static float ContactVariance() {
+        float s = 0;
+        for(int i = 0; i<= MyFrame.pats.size() - 1; i++) {
+            float p = amkachains.get(i).split(" ").length - ContactMean();
+            s += Math.pow(p, 2); 
         }
+        float result = (float)s/(float)amkachains.size();
+       return result;
       }
-   // Function that deletes patient by date of birth
-      public static void dobDelete(String dob) {
-        for (int i = 0; i <= MyFrame.pats.size() - 1; i++) {
-            if(MyFrame.pats.get(i).getDob().equals(dob)) {
-                MyFrame.pats.remove(i);
-                ids.remove(i);
-                names.remove(i);
-                amkas.remove(i);
-                dobs.remove(i);
-                emails.remove(i);
-                phonenumbers.remove(i);
-                amkachains.remove(i);
-            }
-        }
-      }
-   // Function that deletes patient by email
-      public static void emailDelete(String email) {
-        for (int i = 0; i <= MyFrame.pats.size() - 1; i++) {
-            if(MyFrame.pats.get(i).getEmail().equals(email)) {
-                MyFrame.pats.remove(i);
-                ids.remove(i);
-                names.remove(i);
-                amkas.remove(i);
-                dobs.remove(i);
-                emails.remove(i);
-                phonenumbers.remove(i);
-                amkachains.remove(i);
-            }
-        }
-      }
-   // Function that deletes patient by phone number
-      public static void phoneDelete(String phonenumber) {
-        for (int i = 0; i <= MyFrame.pats.size() - 1; i++) {
-            if(MyFrame.pats.get(i).getPhone().equals(phonenumber)) {
-                MyFrame.pats.remove(i);
-                ids.remove(i);
-                names.remove(i);
-                amkas.remove(i);
-                dobs.remove(i);
-                emails.remove(i);
-                phonenumbers.remove(i);
-                amkachains.remove(i);
-            }
-        }
-      }
-   // Function that deletes patient by amka chain
-      public static void amkachainDelete(String amkachain) {
-        for (int i = 0; i <= MyFrame.pats.size() - 1; i++) {
-            if(MyFrame.pats.get(i).getAmkachain().equals(amkachain)) {
-                MyFrame.pats.remove(i);
-                ids.remove(i);
-                names.remove(i);
-                amkas.remove(i);
-                dobs.remove(i);
-                emails.remove(i);
-                phonenumbers.remove(i);
-                amkachains.remove(i);
-            }
-        }
+      public static double ContactStandardDeviation() {
+          return Math.sqrt(ContactVariance());
       }
  } 

@@ -40,7 +40,16 @@ public class MyFrame extends JFrame implements ActionListener {
 	JButton button3;
 	JButton button4;
 	JButton button5;
+	JButton button6;
 	JTextField textField1;
+	JTextField textField2;
+	JTextField textField3;
+	JTextField textField4;
+	JTextField textField5;
+	JTextField textField6;
+	JTextField textField7;
+	JTextField textField8;
+
 	JLabel label2;
 	JPanel panel2;
 	ImageIcon image;
@@ -56,7 +65,38 @@ public class MyFrame extends JFrame implements ActionListener {
     createFile();
 	textField1 = new JTextField(25);	      
 	textField1.setBounds(210,225,545,30);                                       //Set place and size of panel2 in frame
-	textField1.setFont(new Font("Arial", Font.PLAIN,20));                       ////Set textField1's text characteristics
+	textField1.setFont(new Font("Arial", Font.PLAIN,20)); 
+	
+	
+	textField2 = new JTextField(25);	      
+	textField2.setBounds(10,180,100,30);                                       //Set place and size of panel2 in frame
+	textField2.setFont(new Font("Arial", Font.PLAIN,20));                 
+	
+	textField3 = new JTextField(25);	      
+	textField3.setBounds(150,180,100,30);                                       //Set place and size of panel2 in frame
+	textField3.setFont(new Font("Arial", Font.PLAIN,20)); 
+	
+	textField4 = new JTextField(25);	      
+	textField4.setBounds(250,180,100,30);                                       //Set place and size of panel2 in frame
+	textField4.setFont(new Font("Arial", Font.PLAIN,20)); 
+	
+	textField5 = new JTextField(25);	      
+	textField5.setBounds(500,180,100,30);                                       //Set place and size of panel2 in frame
+	textField5.setFont(new Font("Arial", Font.PLAIN,20)); 
+	
+	
+	textField6 = new JTextField(25);	      
+	textField6.setBounds(600,180,100,30);                                       //Set place and size of panel2 in frame
+	textField6.setFont(new Font("Arial", Font.PLAIN,20)); 
+	
+	////Set textField1's text characteristics
+	textField7 = new JTextField(25);	      
+	textField7.setBounds(700,180,100,30);                                       //Set place and size of panel2 in frame
+	textField7.setFont(new Font("Arial", Font.PLAIN,20)); 
+
+	textField8 = new JTextField(25);	      
+	textField8.setBounds(800,180,100,30);                                       //Set place and size of panel2 in frame
+	textField8.setFont(new Font("Arial", Font.PLAIN,20)); 
 	//Create label2
 	label2=new JLabel();
 	label2.setText("Enter command here:");                                      //Add text to label2
@@ -105,22 +145,28 @@ public class MyFrame extends JFrame implements ActionListener {
 	button5.addActionListener(this);                                             //Add action listener for button
 	button5.setText("Delete");                                                    //Add button text
 	button5.setFocusable(false);
-	button5.setFont(new Font("Arial", Font.PLAIN,20));                           //Set button's text characteristics
+	button5.setFont(new Font("Arial", Font.PLAIN,20));     
+	
+	button6 = new JButton();
+	button6.setBounds(55,295,100,40);                                           //Set place and size of button in frame
+	button6.addActionListener(this);                                             //Add action listener for button
+	button6.setText("Statistics");                                                    //Add button text
+	button6.setFocusable(false);
+	button6.setFont(new Font("Arial", Font.PLAIN,20));//Set button's text characteristics
 	
 	//Create image to use in label
-	ImageIcon image = new ImageIcon(new ImageIcon("covidtracelogo.png").getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT));
-	//Create label with icon	
+	image = new ImageIcon("covidtracelogo.png");                                        //Path to image
+	//Create label with text and icon	
 	label = new JLabel ();
-	label.setIcon(image);
-	//Set label icon 
-	label.setBounds(0 , 0 , 800, 250);                                          //Set label place in frame
+	label.setText("Welcome to Covidtrace");                                     //Set label text
+	label.setIcon(image);                                                       //Set label icon 
+	label.setFont(new Font("Arial",Font.PLAIN,20));                             //Set label's text characteristics
+	label.setBounds(0 , 0 , 600, 250);                                          //Set label place in frame
 	//Create panel1 to add label 		
 	JPanel panel1=new JPanel();
 	panel1.setBounds(15, 0, 865, 250);                                          //Set place and size of panel1 in frame
 	//panel1.setBorder(border);                                                 //Set panel1 borders
 	panel1.add(label);                                                          //Add label to panel1 
-    
-    
     
 	//Create scrollpane
 	lowerPanel = new JPanel ();
@@ -133,8 +179,9 @@ public class MyFrame extends JFrame implements ActionListener {
     scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
     //Add Textarea in to lower panel
     lowerPanel.add (scroll);
-	display.append("Type: /quit if you want to exit.\n      /all if you want to see all patient's names so far."
-			   + "\n      /search to search the database." + "\n      /add to add patient. \n  /del to delete patient + \n");
+	display.append("[COVIDTRACE] \n \n 1. Insert patients information and press add to insert him to the database. \n 2. Insert a patients name in the command area and press Search by Name to search for patients information." + 
+	"\n 3. Press See All for an overview of the patients in the system. \n 4. Enter a patients name in the command area and press Delete to remove him from the database. \n " + 
+	"5. Press Statistics for a statistical overview of the network of patients. \n 6. Press Save to save changes. \n \n");
 	//Add components to this frame
 	ImageIcon logo = new ImageIcon("covidtracelogo.png");
 	this.setResizable(false);                                                   //Set frame non-resizable
@@ -144,7 +191,16 @@ public class MyFrame extends JFrame implements ActionListener {
 	this.setSize(900,750);                                                      //Set dimentions of this frame
 	this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);                        //Exit app when 'X' clicked 
 	this.add(button);                                                           //Add button to frame
-	this.add(textField1);                                                       //Add textField1 to frame
+	this.add(textField1);   
+	this.add(textField2);                                                       //Add textField1 to frame
+
+	this.add(textField4);                                                       //Add textField1 to frame
+	this.add(textField5);                                                       //Add textField1 to frame
+	this.add(textField6);                                                       //Add textField1 to frame
+	this.add(textField7); 
+	this.add(textField8);                                                       //Add textField1 to frame
+	//Add textField1 to frame
+	//Add textField1 to frame
 	this.add(panel2);                                                           //Add panel2 to frame
 	this.setLayout(null);                                                       //Don't use default Layout manager 
 	this.add(panel1);                                                           //Add panel1 to frame
@@ -153,6 +209,8 @@ public class MyFrame extends JFrame implements ActionListener {
 	this.add(button3);
 	this.add(button4);
 	this.add(button5);
+	this.add(button6);
+
 	}
     public  String returnInp() {
         return input;
@@ -187,7 +245,6 @@ public class MyFrame extends JFrame implements ActionListener {
 			ArrayList<String> data6 = new ArrayList<>(); // data 6 is for phone number.
 			ArrayList<String> data7 = new ArrayList<>(); // data 7 is for amkachain.
 	
-			 
 			data = Patient.returnNames();
 			data2 = Patient.returnIds();
 			data3 = Patient.returnAmkas();
@@ -206,7 +263,7 @@ public class MyFrame extends JFrame implements ActionListener {
 	
 			}
 			myWriter.close();
-			display.append("Successfully wrote to the file.\n");
+			display.append("Successfully wrote to the file.\n \n");
 		  } catch (IOException d) {
 			display.append("An error occurred.\n");
 			d.printStackTrace();
@@ -217,127 +274,123 @@ public class MyFrame extends JFrame implements ActionListener {
     //Action listener used for all buttons
 	@Override
     public void actionPerformed(ActionEvent e) {	
-		 if (e.getSource()==button) {
-		   // Setting name and attributes to null basically and id = 0 for the first person.
-		   String phonenumber, amka, dob, email, name, input, amkachain= "";
-    
-		   // Creating new file if it doesnt exist, reading data from existing file.
-			 int id = Patient.returnNames().size();
-
-		   // I created a while loop, this loop always asks for a new input, a new patient. It stops only when you input '/quit'.
-			
-				   display.append("Enter patients name, patients amka, date of birth, email and amkachain with double spaces in between, \n amka chain should be a string of some amka numbers separated by one space.  \n");
-				   name = textField1.getText();
-				   String d[];
-				   d = name.split("  ");
-				   name = d[0];
-				   id = Integer.parseInt(d[1]);
-				   amka = d[2];
-				   dob = d[3];
-				   email = d[4];
-				   phonenumber = d[5];
-				   amkachain = d[6];
+		String phonenumber= "";
+		String amka = "";
+		String dob = "";
+		String email = "";
+		String name = "";
+		String amkachain = "";
+		int id = Patient.returnNames().size();
+		// if add button is pressed
+				 if (e.getSource() ==  button) {
+				   display.append("Enter patients full name, id, amka, date of birth, email, phonenumber and amkachain,"
+				   + " \n amka chain should be the amka numbers of the contacts of said patient separated by one space.  \n \n");
+				   if(!textField2.getText().isEmpty()){
+				   name = textField2.getText();
+				   } else {
+					   display.append("No name selected or invalid type selected. \n");
+				   }
+				   if(!textField4.getText().isEmpty()){
+				   amka = textField4.getText();
+				   } else {
+					   display.append("No amka selected. \n");
+				   }
+				   if (!textField5.getText().isEmpty()) {
+				   dob = textField5.getText();
+				   } else  {
+					   display.append("No date of birth selected \n");
+				   }
+				   if(!textField6.getText().isEmpty()) {
+				   email = textField6.getText();
+				   } else {
+					   display.append("No email selected . \n");
+				   }
+				   if(!textField7.getText().isEmpty()) {
+				   phonenumber = textField7.getText();
+				   } else {
+					   display.append("No phonenumber selected \n");
+				   }
+				   if( !textField8.getText().isEmpty()) {
+				   amkachain = textField8.getText();
+				   } else {
+					   display.append("No amkachain selected \n");
+				   }
+				   if(name != "" && String.valueOf(id)!="" && amka!="" && dob!="" && email!="" && phonenumber!="" && amkachain!=""){
 				   Patient adam = new Patient(name, id, amka, dob, email, phonenumber, amkachain);
 				   pats.add(adam);
+				   
 				   // Informing the user on the new information of the patient.
-				   display.append(adam.getPatientData());
+				   display.append(adam.getPatientData() + "\n");
+				   display.append("Patient added. \n \n");
 				   // Automatically counting a new ID for each patient.
 				   id ++;
-		// if search button is pressed.  
-		} else if (e.getSource() == button2) {
-		  Scanner sc = new Scanner(System.in);
-			display.append("Enter "name" to search by name");
-			display.append("Enter "id" to search by id");
-			display.append("Enter "amka" to search by amka");
-			display.append("Enter "dob" to search by date of birth");
-			display.append("Enter "email" to search by email");
-			display.append("Enter "phonenumber" to search by phone number");
-			display.append("Enter "amkachain" to search by amka chain");
-			String ob = sc.nextLine();
-			if (ob == "name") {
-				display.append("Please enter name to search with.\n");
-		        String nme = textField1.getText();
-		        display.append(Patient.nameSearch(nme));
-			} else if (ob == "id") {
-				display.append("Please enter id to search with.\n");
-				int id1 = textField1.getText();
-				display.append(Patient.idSearch(id1));
-			} else if (ob == "amka") {
-				display.append("Please enter amka to search with.\n");
-				String amka1 = textField1.getText();
-				display.append(Patient.amkaSearch(amka1));
-			} else if (ob == "dob") {
-				display.append("Please enter date of birth to search with.\n");
-				String dob1 = textField1.getText();
-				display.append(Patient.dobSearch(dob1));
-			} else if (ob == "email") {
-				display.append("Please enter email to search with.\n");
-				String email1 = textField1.getText();
-				display.append(Patient.emailSearch(email1));
-			} else if (ob == "phonenumber") {
-				display.append("Please enter phone number to search with.\n");
-				String ph1 = textField1.getText();
-				display.append(Patient.phoneSearch(ph1));
-			} else if (ob == "amkachain") {
-				display.append("Please enter amka chain to search with.\n");
-				String amkachain1 = textField1.getText();
-				display.append(Patient.amkachainSearch(amkachain1));
+				   }else{
+					   display.append("Addition failed. \n \n");
+				   }
+						 }	
+		actionPerformed2(e);
+		actionPerformed3(e);
+		actionPerformed4(e);
+		actionPerformed5(e);
+		actionPerformed6(e);
+		
+}
+
+public void actionPerformed2(ActionEvent a) {
+	// If Statistics button is pressed.
+	 if (a.getSource() == button6) {
+		Patient.ContactMean();
+		display.append("----------------------------------------------------------------- \n \n");
+		display.append("Statistical Overview \n \n");
+		display.append("Number of patients : " + Patient.returnNames().size() + "\n \n");
+		display.append("Average people contacted per patient : " + Patient.ContactMean() + "\n \n");
+		display.append("Variance of contacts per patient : " + Patient.ContactVariance() + "\n \n");
+		display.append("Standard deviation of contacts per patient : " + Patient.ContactStandardDeviation() + "\n \n");
+		display.append("Patients: " + Patient.returnNames() + "\n \n");
+		display.append("----------------------------------------------------------------- \n \n");
+	}
+
+}
+public void actionPerformed3(ActionEvent d) {
+	  // if delete button is pressed.
+	   if (d.getSource() == button5) {
+		if(!textField1.getText().isEmpty()) {
+			String nem = textField1.getText();	
+			boolean flag  = Patient.nameDelete(nem);
+			if(flag == false) {
+			display.append("Patient " + nem + " Deleted. \n \n");}
+			else {
+				display.append("Patient " + nem + " not found! \n");
 			}
-        // if save button is pressed.
-		} else if (e.getSource() == button3) {
-			  writeFile();
-		// if all button is pressed	  
-		} else if (e.getSource() == button4) {
-			display.append(Patient.allNames());
-        // if delete button is pressed.
-		} else if (e.getSource() == button5) {
-			Scanner sc1 = new Scanner(System.in);
-			display.append("Enter "name" to delete by name");
-			display.append("Enter "id" to delete by id");
-			display.append("Enter "amka" to delete by amka");
-			display.append("Enter "dob" to delete by date of birth");
-			display.append("Enter "email" to delete by email");
-			display.append("Enter "phonenumber" to delete by phone number");
-			display.append("Enter "amkachain" to delete by amka chain");
-			String obj = sc1.nextLine();
-			if (obj == "name") {
-				display.append("Please enter name to delete with.\n");
-				String nem = textField1.getText();
-				Patient.nameDelete(nem);
-				display.append("Patient with name " + nem + " Deleted.\n");
-			} else if (obj == "id") {
-				display.append("Please enter id to delete with.\n");
-				int id2 = textField1.getText();
-				Patient.idDelete(id2);
-				display.append("Patient with id " + id2 + " Deleted.\n");
-			} else if (obj == "amka") {
-				display.append("Please enter amka to delete with.\n");
-				String amka2 = textField1.getText();
-				Patient.amkaDelete(amka2);
-				display.append("Patient with amka " + amka2 + " Deleted.\n");
-			} else if (obj == "dob") {
-				display.append("Please enter date of birth to delete with.\n");
-				String dob2 = textField1.getText();
-				Patient.dobDelete(dob2);
-				display.append("Patient with date of birth " + dob2 + " Deleted.\n");
-			} else if (obj == "email") {
-				display.append("Please enter email to delete with.\n");
-				String email2 = textField1.getText();
-				Patient.emailDelete(email2);
-				display.append("Patient with email " + email2 + " Deleted.\n");
-			} else if (obj == "phonenumber") {
-				display.append("Please enter phone number to delete with.\n");
-				String ph2 = textField1.getText();
-				Patient.phoneDelete(ph2);
-				display.append("Patient with phone number " + ph2 + " Deleted.\n");
-			} else if (obj == "amkachain") {
-				display.append("Please enter amka chain to delete with.\n");
-				String amkachain2 = textField1.getText();
-				Patient.amkachainDelete(amkachain2);
-				display.append("Patient with amka chain " + amkachain2 + " Deleted.\n");
+		} else {
+				display.append("Please enter name in command area to delete. \n \n");
 			}
 		}
+}
+public void actionPerformed4(ActionEvent c) {
+		// if search button is pressed.  
+		 if(c.getSource() ==  button2) {
+			if(!textField1.getText().isEmpty()) { 
+			  String nme = textField1.getText();
+			  display.append(Patient.nameSearch(nme));}
+			  else {
+				  display.append("Please enter name in command area to search for \n \n");
+			  }
+			}
+}
+public void actionPerformed5(ActionEvent c) {
+
+  // if save button is pressed.
+   if (c.getSource() == button3) {
+	writeFile();
+}
+}
+public void actionPerformed6(ActionEvent d) {
+	// if all button is pressed	  
+	 if (d.getSource() == button4) {
+		display.append(Patient.allNames());
 	}
+}
 }
 		
 	
