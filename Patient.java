@@ -1,15 +1,15 @@
-import java.util.ArrayList; // Importing ArrayList class
-import java.io.File;  // Importing the File class
-import java.io.FileNotFoundException;  // Importing this class to handle errors
-import java.io.IOException;  // Importing the IOException class to handle err
-import java.util.Scanner; // Importing the Scanner class to read text files
-import java.util.Date; // Importing java date for some reason? i dont know who pushed this
-import java.lang.Math;
+import java.util.ArrayList;
+import java.io.File; 
+import java.io.FileNotFoundException; 
+import java.io.IOException;  
+import java.util.Scanner; 
+import java.util.Date; 
+import java.lang.Math; 
 public class Patient {
-    // Initialising name and id and other attributes.
+    // Initialising name and id and other attributes for our patient object.
     String name, amka, email, phonenumber, amkachain, dob;
     static int id;
-    // Creating method that reads data from file.
+    // Creating method that reads the patients data from the data.txt database file.
     public static void readdata() {
         try {
             File myObj = new File("data.txt");
@@ -27,7 +27,7 @@ public class Patient {
             e.printStackTrace();
           }
         }
-    // These are arraylists, in which we are going to input our names,ids and other info.
+    // These are arraylists in which we are going to input our names,ids and other info.
     static ArrayList<Integer> ids = new ArrayList<>();
     static ArrayList<String> names = new ArrayList<>();
     static ArrayList<String> datab = new ArrayList<>();
@@ -46,7 +46,7 @@ public class Patient {
         this.email = email;
         this.phonenumber = phonenumber;
         this.amkachain = amkachain; 
-    // Adding patients attributes to lists.
+    // Adding patients attributes to arraylists.
         ids.add(id); 
         names.add(name);
         amkas.add(amka);
@@ -128,8 +128,7 @@ public class Patient {
           String found = "Patient " + name + " not found. \n \n";
           for (int i = 0; i <= MyFrame.pats.size() - 1; i++) {
               if(MyFrame.pats.get(i).getName().equals(name)) {
-                  found = MyFrame.pats.get(i).getPatientData();
-                  
+                  found = MyFrame.pats.get(i).getPatientData();       
           }
         }
           return found;
@@ -152,6 +151,7 @@ public class Patient {
         }
         return trigg;
       }
+      // Function that calculates the mean of the number of contacts for the patients saved in the system.
       public static float ContactMean() {
          int s = 0;
 
@@ -161,6 +161,7 @@ public class Patient {
           float result = (float)s/(float)amkachains.size();
          return result;
       }
+      // Function that calculates the contact variance of the patients in the system.
       public static float ContactVariance() {
         float s = 0;
         for(int i = 0; i<= MyFrame.pats.size() - 1; i++) {
@@ -170,6 +171,7 @@ public class Patient {
         float result = (float)s/(float)amkachains.size();
        return result;
       }
+      // Function that calculates the standard deviation of the patients in the system.
       public static double ContactStandardDeviation() {
           return Math.sqrt(ContactVariance());
       }

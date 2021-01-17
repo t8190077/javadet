@@ -7,8 +7,8 @@ import java.util.ArrayList; // Importing the ArrayList class
 import java.util.Date; // Importing date again seriously who pushed this
 import java.text.DateFormat; // and this
 import java.text.ParseException; // importing parsexception
-import java.text.SimpleDateFormat; // importing simpledateformat?
-// Here is the main class. From here all the classes of our program will be called.
+import java.text.SimpleDateFormat; // importing simpledateformat
+// Here is the main class.
 public class Main {
     static ArrayList<Patient> pats = new ArrayList<>();
     public static void main(String[] args) {

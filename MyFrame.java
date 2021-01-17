@@ -1,4 +1,4 @@
-import java.awt.BorderLayout; // Importing various GUI elements from swing library
+import java.awt.BorderLayout; 
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -22,12 +22,12 @@ import java.awt.event.*;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
-import java.util.Scanner; // Importing Scanner class
-import java.io.File;  // Importing the File class
-import java.io.IOException;  // Importing the IOException class to handle err
-import java.io.FileWriter;   // Importing the FileWriter class
+import java.util.Scanner; 
+import java.io.File;  
+import java.io.IOException;  
+import java.io.FileWriter;   
 import java.io.PrintWriter;
-import java.util.ArrayList; // Importing the ArrayList class
+import java.util.ArrayList; 
 import java.util.Date;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -51,7 +51,14 @@ public class MyFrame extends JFrame implements ActionListener {
 	JTextField textField8;
 
 	JLabel label2;
+	JLabel fullnamelabel;
+	JLabel amkalabel;
+	JLabel doblabel;
+	JLabel emaillabel;
+	JLabel phonenumberlabel;
+	JLabel amkachainlabel;
 	JPanel panel2;
+	JPanel panel3;
 	ImageIcon image;
 	Border border;
 	JLabel label;
@@ -61,51 +68,85 @@ public class MyFrame extends JFrame implements ActionListener {
     String input;
 	
 	MyFrame(){
-    //Create textfield1
+    //Creating textfields.
     createFile();
 	textField1 = new JTextField(25);	      
-	textField1.setBounds(210,225,545,30);                                       //Set place and size of panel2 in frame
+	textField1.setBounds(210,255,545,30);                                       //Set place and size of panel2 in frame
 	textField1.setFont(new Font("Arial", Font.PLAIN,20)); 
 	
 	
 	textField2 = new JTextField(25);	      
-	textField2.setBounds(10,180,100,30);                                       //Set place and size of panel2 in frame
+	textField2.setBounds(55,210,120,30);                                       //Set place and size of panel2 in frame
 	textField2.setFont(new Font("Arial", Font.PLAIN,20));                 
 	
 	textField3 = new JTextField(25);	      
-	textField3.setBounds(150,180,100,30);                                       //Set place and size of panel2 in frame
+	textField3.setBounds(60,210,100,30);                                       //Set place and size of panel2 in frame
 	textField3.setFont(new Font("Arial", Font.PLAIN,20)); 
 	
 	textField4 = new JTextField(25);	      
-	textField4.setBounds(250,180,100,30);                                       //Set place and size of panel2 in frame
+	textField4.setBounds(200,210,100,30);                                       //Set place and size of panel2 in frame
 	textField4.setFont(new Font("Arial", Font.PLAIN,20)); 
 	
 	textField5 = new JTextField(25);	      
-	textField5.setBounds(500,180,100,30);                                       //Set place and size of panel2 in frame
+	textField5.setBounds(315,210,100,30);                                       //Set place and size of panel2 in frame
 	textField5.setFont(new Font("Arial", Font.PLAIN,20)); 
 	
 	
 	textField6 = new JTextField(25);	      
-	textField6.setBounds(600,180,100,30);                                       //Set place and size of panel2 in frame
+	textField6.setBounds(430,210,100,30);                                       //Set place and size of panel2 in frame
 	textField6.setFont(new Font("Arial", Font.PLAIN,20)); 
 	
-	////Set textField1's text characteristics
+	
 	textField7 = new JTextField(25);	      
-	textField7.setBounds(700,180,100,30);                                       //Set place and size of panel2 in frame
+	textField7.setBounds(545,210,100,30);                                       //Set place and size of panel2 in frame
 	textField7.setFont(new Font("Arial", Font.PLAIN,20)); 
 
 	textField8 = new JTextField(25);	      
-	textField8.setBounds(800,180,100,30);                                       //Set place and size of panel2 in frame
+	textField8.setBounds(660,210,100,30);                                       //Set place and size of panel2 in frame
 	textField8.setFont(new Font("Arial", Font.PLAIN,20)); 
-	//Create label2
+	//Create labels
 	label2=new JLabel();
-	label2.setText("Enter command here:");                                      //Add text to label2
-	label2.setFont(new Font("Arial", Font.PLAIN,17));                           //Set label2 text characteristics
+	label2.setText("Command");                                      //Add text to label2
+	label2.setFont(new Font("Arial", Font.PLAIN,17));  
+
+	fullnamelabel=new JLabel();
+	fullnamelabel.setText("Full name");                                      //Add text to label2
+	fullnamelabel.setFont(new Font("Arial", Font.PLAIN,17)); 
+	fullnamelabel.setBounds(60, 180, 100, 30);
+
+	amkalabel=new JLabel();
+	amkalabel.setText("AMKA");                                   //Add text to label2
+	amkalabel.setFont(new Font("Arial", Font.PLAIN,17)); 
+	amkalabel.setBounds(200, 180, 100, 30);
+
+	doblabel=new JLabel();
+	doblabel.setText("Date of Birth");                                      //Add text to label2
+	doblabel.setFont(new Font("Arial", Font.PLAIN,17)); 
+	doblabel.setBounds(315, 180, 100, 30);
+
+	emaillabel=new JLabel("");
+	emaillabel.setText("E-mail");                                      //Add text to label2
+	emaillabel.setFont(new Font("Arial", Font.PLAIN,17)); 
+	emaillabel.setBounds(430, 180, 100, 30);
+
+	phonenumberlabel=new JLabel();
+	phonenumberlabel.setText("Phone");                                      //Add text to label2
+	phonenumberlabel.setFont(new Font("Arial", Font.PLAIN,17)); 
+	phonenumberlabel.setBounds(545, 180, 100, 30);
+
+	amkachainlabel = new JLabel();
+	amkachainlabel.setText("Amkachain");                                      //Add text to label2
+	amkachainlabel.setFont(new Font("Arial", Font.PLAIN,17)); 
+	amkachainlabel.setBounds(660, 180, 100, 30);
 	
-	//Create panel2
+	//Create panels
 	panel2=new JPanel();                       
-	panel2.setBounds(20, 227, 200, 30);                                         //Set place and size of panel2 in frame
-	panel2.add(label2);                                                         //Add label2 to panel2
+	panel2.setBounds(50, 255, 200, 30);                                         //Set place and size of panel2 in frame
+	panel2.add(label2);    
+	
+	panel3=new JPanel();                       
+	panel3.setBounds(10, 240, 100, 30);                                         //Set place and size of panel2 in frame
+	panel3.add(fullnamelabel); //Add label2 to panel2
 	//Create add button
 	button = new JButton();
 	button.setBounds(655,295,100,40);                                           //Set place and size of button in frame
@@ -146,7 +187,7 @@ public class MyFrame extends JFrame implements ActionListener {
 	button5.setText("Delete");                                                    //Add button text
 	button5.setFocusable(false);
 	button5.setFont(new Font("Arial", Font.PLAIN,20));     
-	
+	// Create statistics button
 	button6 = new JButton();
 	button6.setBounds(55,295,100,40);                                           //Set place and size of button in frame
 	button6.addActionListener(this);                                             //Add action listener for button
@@ -158,7 +199,7 @@ public class MyFrame extends JFrame implements ActionListener {
 	image = new ImageIcon("covidtracelogo.png");                                        //Path to image
 	//Create label with text and icon	
 	label = new JLabel ();
-	label.setText("Welcome to Covidtrace");                                     //Set label text
+	label.setText("");                                     //Set label text
 	label.setIcon(image);                                                       //Set label icon 
 	label.setFont(new Font("Arial",Font.PLAIN,20));                             //Set label's text characteristics
 	label.setBounds(0 , 0 , 600, 250);                                          //Set label place in frame
@@ -166,7 +207,9 @@ public class MyFrame extends JFrame implements ActionListener {
 	JPanel panel1=new JPanel();
 	panel1.setBounds(15, 0, 865, 250);                                          //Set place and size of panel1 in frame
 	//panel1.setBorder(border);                                                 //Set panel1 borders
-	panel1.add(label);                                                          //Add label to panel1 
+	panel1.add(label);  
+
+                                                    
     
 	//Create scrollpane
 	lowerPanel = new JPanel ();
@@ -192,18 +235,21 @@ public class MyFrame extends JFrame implements ActionListener {
 	this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);                        //Exit app when 'X' clicked 
 	this.add(button);                                                           //Add button to frame
 	this.add(textField1);   
-	this.add(textField2);                                                       //Add textField1 to frame
-
-	this.add(textField4);                                                       //Add textField1 to frame
-	this.add(textField5);                                                       //Add textField1 to frame
-	this.add(textField6);                                                       //Add textField1 to frame
+	this.add(fullnamelabel);
+	this.add(amkalabel);
+	this.add(doblabel);
+	this.add(phonenumberlabel);
+	this.add(emaillabel);
+	this.add(amkachainlabel);
+	this.add(textField2);
+	this.add(textField4);                                                       
+	this.add(textField5);                                                     
+	this.add(textField6);                                                      
 	this.add(textField7); 
-	this.add(textField8);                                                       //Add textField1 to frame
-	//Add textField1 to frame
-	//Add textField1 to frame
-	this.add(panel2);                                                           //Add panel2 to frame
-	this.setLayout(null);                                                       //Don't use default Layout manager 
-	this.add(panel1);                                                           //Add panel1 to frame
+	this.add(textField8);                                                      
+	this.add(panel2); 
+	this.setLayout(null);                                                       
+	this.add(panel1);      
 	this.add (lowerPanel);
 	this.add(button2);
 	this.add(button3);
@@ -215,7 +261,7 @@ public class MyFrame extends JFrame implements ActionListener {
     public  String returnInp() {
         return input;
 	}
-	// Method that creates data file.
+	// Method that creates data.txt file.
     public void createFile() {
 		try {
 			File myObj = new File("data.txt");
@@ -231,7 +277,7 @@ public class MyFrame extends JFrame implements ActionListener {
 		   // Reading data from file if it already exists.
 		   Patient.readdata();
 	}
-	// Creating method that writes results to .txt file.
+	// Creating method that writes results to data.txt file.
 	public void writeFile() {
 		   
 		   try {
